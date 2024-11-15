@@ -1,6 +1,6 @@
 name: subpub
 description: A lightweight and efficient state management solution for Flutter implementing the publisher-subscriber pattern with automatic dependency tracking and macro-powered code generation
-version: 0.0.1-dev.3
+version: 0.0.1-dev.4
 homepage: https://github.com/p4-k4/subpub
 repository: https://github.com/p4-k4/subpub
 issue_tracker: https://github.com/p4-k4/subpub/issues
@@ -15,9 +15,7 @@ topics:
 
 screenshots:
   - description: 'SubPub Example Screenshot'
-    path: screenshots/screenshot1.png
-    width: 1024
-    height: 768
+    path: https://github.com/p4-k4/subpub/raw/main/screenshots/screenshot1.png
 
 environment:
   sdk: ^3.5.0-152

@@ -2,7 +2,7 @@
 
 A lightweight and efficient state management solution for Flutter that implements the publisher-subscriber pattern with automatic dependency tracking.
 
-![SubPub Example](screenshots/screenshot1.png)
+![SubPub Example](https://github.com/p4-k4/subpub/raw/main/screenshots/screenshot1.png)
 
 ## Features
 
@@ -156,7 +156,3 @@ The `@Publish` macro automatically:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Author
-
-Paurini Taketakehikuroa Wiringi
