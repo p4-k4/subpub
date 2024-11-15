@@ -5,10 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.0.1] - 2024-01-17
+## [0.0.1-dev.1] - 2024-01-17
 
 ### Added
-- Initial release of SubPub
+- Initial pre-release of SubPub
 - Core `Publisher` class implementing publisher-subscriber pattern
 - `Subscriber` widget for automatic dependency tracking
 - `@Publish` macro for generating boilerplate code
@@ -16,3 +16,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Singleton pattern implementation through macros
 - Type-safe state management
 - Flutter integration with ChangeNotifier
+- Comprehensive documentation with examples
+- Screenshot demonstrating usage
