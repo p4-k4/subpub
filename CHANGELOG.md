@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.1-dev.4] - 2024-01-17
 
 ### Fixed
-- Updated screenshot URLs to use GitHub raw permalink in both README and pubspec.yaml
+- Updated screenshot URL to use GitHub raw permalink in README
+- Fixed screenshot path in pubspec.yaml to use local path
 
 ## [0.0.1-dev.3] - 2024-01-17
 

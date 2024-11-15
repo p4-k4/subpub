@@ -15,7 +15,7 @@ topics:
 
 screenshots:
   - description: 'SubPub Example Screenshot'
-    path: https://github.com/p4-k4/subpub/raw/main/screenshots/screenshot1.png
+    path: screenshots/screenshot1.png
 
 environment:
   sdk: ^3.5.0-152
