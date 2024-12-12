@@ -1,8 +1,8 @@
-
 import 'dart:async';
 import 'package:macros/macros.dart';
+import 'macro_extensions.dart';
 
-macro class Publish implements ClassDeclarationsMacro {
+macro class Publish implements ClassDeclarationsMacro, ClassDefinitionMacro {
   const Publish();
 
   @override
@@ -33,13 +33,40 @@ macro class Publish implements ClassDeclarationsMacro {
     for (final field in privateFields) {
       final privateName = field.identifier.name;
       final publicName = field.identifier.name.substring(1);
-      final type = field.type;
+
+      // Check and cast the type using our extension methods
+      final namedType = field.type.checkNamed(builder);
+      if (namedType == null) continue;
 
       builder.declareInType(
         DeclarationCode.fromParts([
-          type.code,
-          ' get $publicName => get($privateName);'
+          'external ',
+          namedType.identifier,
+          if (namedType.isNullable) '?',
+          ' get ',
+          publicName,
+          ';'
         ]),
+      );
+    }
+  }
+
+  @override
+  FutureOr<void> buildDefinitionForClass(
+    ClassDeclaration clazz,
+    TypeDefinitionBuilder builder,
+  ) async {
+    // Get all getter methods
+    final methods = await builder.methodsOf(clazz);
+    final getters = methods.where((m) => m.isGetter);
+
+    // Build the implementation for each getter
+    for (final getter in getters) {
+      final getterMethod = await builder.buildMethod(getter.identifier);
+      final fieldName = '_${getter.identifier.name}';
+      
+      getterMethod.augment(
+        FunctionBodyCode.fromString('=> get($fieldName);'),
       );
     }
   }

@@ -20,11 +20,10 @@ class Subscriber extends StatefulWidget {
 
 class SubscriberState extends State<Subscriber> {
   static SubscriberState? _currentState;
-  final List<ChangeNotifier> _notifiers = [];
+  final Set<ChangeNotifier> _notifiers = {};
 
   void addNotifier(ChangeNotifier notifier) {
-    if (!_notifiers.contains(notifier)) {
-      _notifiers.add(notifier);
+    if (_notifiers.add(notifier)) {
       notifier.addListener(_update);
     }
   }
