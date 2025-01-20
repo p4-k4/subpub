@@ -12,19 +12,19 @@ macro class Publish implements ClassDeclarationsMacro, ClassDefinitionMacro {
   ) async {
     final name = clazz.identifier.name;
 
-    // Add singleton functionality
-    builder.declareInType(
-      DeclarationCode.fromString(
-        'static final instance = $name._();'
-      ),
-    );
-
-    // Add private constructor
-    builder.declareInType(
-      DeclarationCode.fromString(
-        '$name._();'
-      ),
-    );
+    // // Add singleton functionality
+    // builder.declareInType(
+    //   DeclarationCode.fromString(
+    //     'static final instance = $name._();'
+    //   ),
+    // );
+    //
+    // // Add private constructor
+    // builder.declareInType(
+    //   DeclarationCode.fromString(
+    //     '$name._();'
+    //   ),
+    // );
 
     // Create getters for private fields
     final fields = await builder.fieldsOf(clazz);
